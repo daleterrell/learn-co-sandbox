@@ -20,19 +20,22 @@ class Practical::CLI
         puts @movies[input.to_i-1]
       elsif input == "movies"
         movies
-      else
+      end
+      elsif
       case input
       when "1"
         puts "more info on the first movie"
       when "2"
         puts "more info on the second movie"
       end
+      elsif
       when "list"
         movies
       end
       else
        puts "Please choose a movie from the list, or type 'exit'"
       end
+    end
       
       def goodbye
         puts "I hope you enjoy this example of practical effects."
