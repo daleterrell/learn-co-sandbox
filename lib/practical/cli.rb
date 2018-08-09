@@ -21,18 +21,18 @@ class Practical::CLI
       elsif input == "movies"
         movies
       end
-      elsif
+   #   elsif
       case input
       when "1"
         puts "more info on the first movie"
       when "2"
         puts "more info on the second movie"
       end
-      elsif
-      when "list"
+  #    elsif
+  #   when "list"
         movies
       end
-      else
+  #    else
        puts "Please choose a movie from the list, or type 'exit'"
       end
     end
@@ -47,4 +47,3 @@ class Practical::CLI
           puts "#{i}. #{movie.name} - #{movie.director}"
     end
   end
-end
