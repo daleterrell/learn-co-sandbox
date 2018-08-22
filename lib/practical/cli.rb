@@ -1,49 +1,60 @@
 class Practical::CLI
 
   def call
-    movies
-    menu
-    goodbye
+    Practical::Scraper.new.make_movies
+    puts "Welcome to the 15 best horror movies made with practical effects!!"
+    start
   end
-  
-  def movies
-    puts "A selection of the best horror movies with practial FX!"
-  end
-  
-  def menu
-    input = nil
-    while input != "exit"
-      puts "Enter the number of the movie you'd like to know more about!  Or, type 'movies' to see the list of movies, or 'exit'!"
-      
-      input = gets.strip.downcase
-      if input.to_i > 0 
-        puts @movies[input.to_i-1]
-      elsif input == "movies"
-        movies
-      end
-   #   elsif
-      case input
-      when "1"
-        puts "more info on the first movie"
-      when "2"
-        puts "more info on the second movie"
-      end
-  #    elsif
-  #   when "list"
-        movies
-      end
-  #    else
-       puts "Please choose a movie from the list, or type 'exit'"
-      end
-    end
-      
-      def goodbye
-        puts "I hope you enjoy this example of practical effects."
-      end
-      
-      def movies
-        @movies = Practical::Practical.movie
-        @movies.each.with_index(1) do |movie, i|
-          puts "#{i}. #{movie.name} - #{movie.director}"
+
+  def start
+    puts ""
+    puts "What number movie would you like more information about?"
+    input = gets.strip.to_i
+
+    print_movies(input)
+
+    puts ""
+    puts "What movie would you like more information on?"
+    input = gets.strip
+
+    restaurant = Practical::CLI.find(input.to_i)
+
+    print_movie(movie)
+
+    puts ""
+    puts "Would you like to see another print_movie? Enter Y or N"
+
+    input = gets.strip.downcase
+    if input == "y"
+      start
+    elsif input == "n"
+      puts ""
+      puts "Thank you! Have a great day!"
+      exit
+    else
+      puts ""
+      puts "I don't understand that answer."
+      start
     end
   end
+
+  def print_movie(movie)
+    puts ""
+    puts "----------- #{movie.name} -----------"
+    puts ""
+    puts "---------------Description--------------"
+    puts ""
+    puts "#{movie.description}"
+    puts ""
+  end
+
+  def print_movies(from_number)
+    puts ""
+    puts "---------- Movies #{from_number} - #{from_number+14} ----------"
+    puts ""
+    Practical::Movies.all[from_number-1, 15].each.with_index(from_number) do |restaurant, index|
+      puts "#{index}. #{movie.name}"
+    end
+  end
+
+end
