@@ -52,7 +52,7 @@ class Practical::CLI
     puts ""
     puts "---------- Movies #{from_number} - #{from_number+14} ----------"
     puts ""
-    Practical::Movies.all[from_number-1, 15].each.with_index(from_number) do |restaurant, index|
+    Practical::Movie.all[from_number-1, 15].each.with_index(from_number) do |restaurant, index|
       puts "#{index}. #{movie.name}"
     end
   end

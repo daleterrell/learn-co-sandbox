@@ -1,4 +1,4 @@
-class Practical::Practical
+class Practical::Movie
   attr_accessor :name
   
   def self.scrape_movies
