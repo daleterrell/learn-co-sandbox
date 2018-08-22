@@ -17,7 +17,7 @@ class Practical::CLI
     puts "What movie would you like more information on?"
     input = gets.strip
 
-    restaurant = Practical::CLI.find(input.to_i)
+    movie = Practical::CLI.find(input.to_i)
 
     print_movie(movie)
 
