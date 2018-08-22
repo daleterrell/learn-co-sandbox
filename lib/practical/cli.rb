@@ -13,9 +13,6 @@ class Practical::CLI
 
     print_movies(input)
 
-    puts ""
-    puts "What movie would you like more information on?"
-    input = gets.strip
 
     movie = Practical::CLI.find(input.to_i)
 
@@ -29,7 +26,7 @@ class Practical::CLI
       start
     elsif input == "n"
       puts ""
-      puts "Thank you! Have a great day!"
+      puts "Thank you! I hope you enjoy any horror movie, and maybe it'll be a movie from this oist!"
       exit
     else
       puts ""
@@ -52,7 +49,7 @@ class Practical::CLI
     puts ""
     puts "---------- Movies #{from_number} - #{from_number+14} ----------"
     puts ""
-    Practical::Movie.all[from_number-1, 15].each.with_index(from_number) do |restaurant, index|
+    Practical::Movie.all[from_number 1, 15].each.with_index(from_number) do |restaurant, index|
       puts "#{index}. #{movie.name}"
     end
   end
