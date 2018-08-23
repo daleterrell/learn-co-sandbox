@@ -1,7 +1,8 @@
 class Practical::Scraper
 
   def get_page
-    Nokogiri::HTML(open("https://screenrant.com/horror-movies-used-practical-effects-no-cgi/"))
+    html = open("https://screenrant.com/horror-movies-used-practical-effects-no-cgi/")
+    doc = NOKOGIRI::HTML(html)
   end
 
   def scrape_movies_index
