@@ -2,7 +2,7 @@ class Practical::Scraper
 
   def get_page
     html = open("https://www.rottentomatoes.com/search/?search=horror")
-    doc = NOKOGIRI::HTML(html)
+    doc = Nokogiri::HTML(html)
   end
 
   def scrape_movies_index
