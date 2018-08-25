@@ -1,12 +1,14 @@
 require 'pry'
+require 'nokogiri'
+require 'open-uri'
 class Practical::Scraper
 
 
   def name
-    html = open("https://www.pophorror.com/top-ten-best-practical-effects-in-horror/")
-    doc = Nokogiri::HTML(html)
+    doc = Nokogiri::HTML(open("https://www.pophorror.com/top-ten-best-practical-effects-in-horror/")
+    puts doc
     movie = []
-     movie_name = doc.search("div p strong")
+     movie_name = doc.search("div p strong").text
      movie << movie_name
     binding.pry
   end

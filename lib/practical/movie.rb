@@ -1,6 +1,18 @@
 require 'pry'
-class Practical::Movie
-  attr_accessor :name
+class Movie
+  attr_accessor :name, :info 
+  @@all = []
+  
+  def initialize
+    @@all << self
+  end
+  
+  def self.all
+    @@all
+  end
+  
+  def self.new_from_pophorror(url)
+    movie = Movie.new
  
  # def self.create_movie
  #   movie_array = Practical::Scraper.name
@@ -11,12 +23,6 @@ class Practical::Movie
   
    def self.name
     movie = Practical::Scraper.name
-  #  @movie.each.with_index(1) do |movie, i|
-  #     puts "#{i}. #{movie}"
-  #  end
   end
-
-
-  # def new_from_index_page
-  # end 
+end
 end
