@@ -7,6 +7,8 @@ class Practical::CLI
 
     start
   end
+  
+  #https://learn.co/tracks/full-stack-web-development-v5/object-oriented-ruby/final-projects/cli-data-gem-project#
 
   def start
     puts ""
@@ -25,17 +27,16 @@ class Practical::CLI
     input = gets.strip.downcase
     
    
-    elsif input == "n"||"exit"
+    elsif input == "n"|| input == "exit"
       puts ""
       puts "Thank you! I hope you enjoy any horror movie, and maybe it'll be a movie from this list!"
       exit
-    elsif
-      puts ""
-      puts "I don't understand that answer."
-      start
+ #   elsif
+ #     puts ""
+ #     puts "I don't understand that answer."
     end
   end
-
+  
   def print_movie(movie)
     puts ""
     puts "----------- #{movie.name} -----------"
@@ -45,8 +46,4 @@ class Practical::CLI
     puts "#{movie.description}"
     puts ""
   end
-
- 
-  
-
 end

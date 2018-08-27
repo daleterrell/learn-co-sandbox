@@ -5,8 +5,8 @@ class Practical::Scraper
 
 
   def name
-    doc = Nokogiri::HTML(open("https://www.pophorror.com/top-ten-best-practical-effects-in-horror/")
-    puts doc
+    doc = Nokogiri::HTML(open("https://www.pophorror.com/top-ten-best-practical-effects-in-horror/"))
+ #   puts doc
     movie = []
      movie_name = doc.search("div p strong").text
      movie << movie_name
