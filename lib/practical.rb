@@ -6,7 +6,3 @@ require_relative "./practical/scraper"
 require "nokogiri"
 require "open-uri"
 require "pry"
-
-module Practical
-
-end
