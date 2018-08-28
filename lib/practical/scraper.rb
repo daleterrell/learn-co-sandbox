@@ -5,20 +5,20 @@ class Practical::Scraper
 
 
   def name
-    doc = Nokogiri::HTML(open("https://www.pophorror.com/top-ten-best-practical-effects-in-horror/"))
- #   puts doc
+    doc = Nokogiri::HTML(open("https://screenrant.com/horror-movies-used-practical-effects-no-cgi/"))
+    puts doc
     movie = []
-     movie_name = doc.search("div p strong").text
+     movie_name = doc.search("item-title.art-body-content.article-body.article.page_content.w-content.w-website").text
      movie << movie_name
+     
+     info = []
+     info = doc.search("p item-title.art-body-content.article-body.article.page_content.w-content.w-website")
     binding.pry
   end
   
   
 
-  def scrape_movies_index
-    
-  end
-
+ 
  
  # def self.scrape_movies
  #   movies = []
