@@ -55,7 +55,7 @@ class Practical::CLI
       puts "even"
     when "15"
       puts "any good.  seriously overrated."
-    when "list"
+    when "li"
       list_movies
     
    
