@@ -57,3 +57,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 Everyone interacting in the Practical project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'daleterrell'/practical/blob/master/CODE_OF_CONDUCT.md).
 >>>>>>> 2a4e0370f639fbc18f3f4de0a90087fd844a449f
 # Practical
+# best
